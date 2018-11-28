@@ -15,6 +15,7 @@
 <body>
 <script>
     // TODO : A la fin, placer les scripts dans un fichier JS, le style dans un fichier CSS...
+    // TODO : function f() ?
     /** retourne la valeur saisie par l'utilisateur */
     function f()
     {
@@ -26,7 +27,7 @@
      l’utilisateur
      remarque : actuellement présente la valeur de filtre de l'utilisateur
      */
-    function encadreElts()
+    function encadreElements()
     {
 // TODO
         alert(f());
@@ -36,35 +37,36 @@
      * détermine le nombre d'occurrences d'une balise d'un nom donné présent dans le document
      */
 
-
     function totalOccurElement(baliseName) {
 
-        console.log(baliseName);
-        let elts = document.querySelectorAll(baliseName);
+        let elements = document.querySelectorAll(baliseName);
         // OU
-        // let elts = document.getElementsByTagName("div");
-        console.log(elts);
+        // let elements = document.getElementsByTagName("div");
+        console.log(elements);
 
-        if(elts != null) {
-            return elts.length;
+        if(elements != null) {
+            return elements.length;
 
         }
 
         return 0;
     }
 
-    function nbOccur() {
-        let n = totalOccurElement('div');
-        alert(n);
+    function nbOccurrences() {
+
+        let element = document.getElementById("idInputText").value;
+
+        let nbTotalElements = totalOccurElement(element);
+        alert(nbTotalElements);
     }
 
 </script>
 <form>
-  <input type="button" id="button" value="debug" onclick="encadreElts();" />
+  <input type="button" id="button" value="debug" onclick="encadreElements();" />
   <input
-          type="text" id="idInputText" placeholder="Sélectionnez un type d'élément" />
+          type="text" id="idInputText" value="idInputText" placeholder="Sélectionnez un type d'élément" />
   <input style="border: 1px solid black;" type="button"
-         value="Nombre d'occurrences" onclick="nbOccur();" />
+         value="nbOccurrences" onclick="nbOccurrences();" />
 </form>
 <div><p>Lorem ipsum dolor sit amet.</p></div>
 <div><p>consectetur adipiscing elit</p></div>
