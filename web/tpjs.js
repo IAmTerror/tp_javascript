@@ -53,8 +53,13 @@ function coloriserLesOccurrences() {
 
     let elements = document.querySelectorAll(element);
 
+    // for (let i = 0; i < elements.length; i++) {
+    //     elements[i].style.backgroundColor="red";
+    //     elements[i].style.borderColor="1px solid black";
+    // }
+
     for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor="red";
-        elements[i].style.borderColor="1px solid black";
+        console.log(elements);
+        elements[i].className="coloriserLesOccurrences";
     }
 }
