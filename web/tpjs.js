@@ -1,16 +1,18 @@
+// --- FONCTIONS JAVASCRIPT ----------------------------------------------------
+
 /** retourne la valeur saisie par l'utilisateur */
 function f()
 {
     var texte = document.getElementById("idInputText").value;
     return texte;
 }
+
 /**
  Place un cadre rouge autour des éléments répondant au filtre de
  l’utilisateur
  */
 function encadreElements()
 {
-// TODO
     alert(f());
 }
 
@@ -25,7 +27,6 @@ function compterOccurrencesElement(baliseName) {
 
     if(elements != null) {
         return elements.length;
-
     }
     return 0;
 }
@@ -37,20 +38,19 @@ function compterOccurrencesElement(baliseName) {
 function nbOccurrences() {
 
     let element = document.getElementById("idInputText").value;
-
     let nbTotalElements = compterOccurrencesElement(element);
-
     alert(nbTotalElements);
-
 }
 
 /**
- * colorise les balises sélectionnées par l'utilisateur dans le formulaire
+ * colorise les balises sélectionnées par l'utilisateur dans le formulaire lorsque le...
+ * ... bouton filtrerLesOccurrences est pressé
+ * décolorise et applique un cadre ombragé sur les balises sélectionnées par l'utilisateur...
+ * ... lorsque le bouton filtrerLesOccurrences est pressé une seconde fois
  */
 function coloriserLesOccurrences() {
 
     let element = document.getElementById("idInputText").value;
-
     let elements = document.querySelectorAll(element);
 
     // for (let i = 0; i < elements.length; i++) {
@@ -60,6 +60,11 @@ function coloriserLesOccurrences() {
 
     for (let i = 0; i < elements.length; i++) {
         console.log(elements);
-        elements[i].className="coloriserLesOccurrences";
+        if(elements[i].className === "coloriserLesOccurrences") {
+            elements[i].classList.remove("coloriserLesOccurrences");
+            elements[i].className = "decoloriserLesOccurrences";
+        } else {
+            elements[i].className = "coloriserLesOccurrences";
+        }
     }
 }
