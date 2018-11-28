@@ -1,4 +1,3 @@
-// TODO : function f() ?
 /** retourne la valeur saisie par l'utilisateur */
 function f()
 {
@@ -8,7 +7,6 @@ function f()
 /**
  Place un cadre rouge autour des éléments répondant au filtre de
  l’utilisateur
- remarque : actuellement présente la valeur de filtre de l'utilisateur
  */
 function encadreElements()
 {
@@ -19,19 +17,11 @@ function encadreElements()
 /**
  * détermine le nombre d'occurrences d'une balise d'un nom donné présent dans le document
  */
-
-function totalOccurElement(baliseName) {
+function compterOccurrencesElement(baliseName) {
 
     let elements = document.querySelectorAll(baliseName);
-
-    console.log(elements);
     // OU
     // let elements = document.getElementsByTagName("div");
-
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor="red";
-        elements[i].style.borderColor="1px solid black";
-    }
 
     if(elements != null) {
         return elements.length;
@@ -40,12 +30,31 @@ function totalOccurElement(baliseName) {
     return 0;
 }
 
+/**
+ * affiche le nombre d'occurrences d'une balise d'un nom donné présent dans le document...
+ * ... dans un alert lorsque le bouton nbOccurences est pressé
+ */
 function nbOccurrences() {
 
     let element = document.getElementById("idInputText").value;
 
-    let nbTotalElements = totalOccurElement(element);
+    let nbTotalElements = compterOccurrencesElement(element);
 
     alert(nbTotalElements);
 
+}
+
+/**
+ * colorise les balises sélectionnées par l'utilisateur dans le formulaire
+ */
+function coloriserLesOccurrences() {
+
+    let element = document.getElementById("idInputText").value;
+
+    let elements = document.querySelectorAll(element);
+
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor="red";
+        elements[i].style.borderColor="1px solid black";
+    }
 }

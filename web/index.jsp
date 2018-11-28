@@ -14,8 +14,8 @@
             type="text" id="idInputText" placeholder="Sélectionnez un type d'élément"/>
     <input style="border: 1px solid black;" type="button"
            value="nbOccurrences" onclick="nbOccurrences();"/>
-    <%--<input style="border: 1px solid black;" type="button"--%>
-           <%--value="filtrerLesOccurrences" onclick="coloriserLesOccurences();"/>--%>
+    <input style="border: 1px solid black;" type="button"
+           value="filtrerLesOccurrences" onclick="coloriserLesOccurrences();"/>
 </form>
 <div><p>Lorem ipsum dolor sit amet.</p></div>
 <div><p>consectetur adipiscing elit</p></div>
