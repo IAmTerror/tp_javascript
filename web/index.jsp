@@ -11,9 +11,11 @@
 <form>
     <input type="button" id="button" value="debug" onclick="encadreElements();"/>
     <input
-            type="text" id="idInputText" value="idInputText" placeholder="Sélectionnez un type d'élément"/>
+            type="text" id="idInputText" placeholder="Sélectionnez un type d'élément"/>
     <input style="border: 1px solid black;" type="button"
            value="nbOccurrences" onclick="nbOccurrences();"/>
+    <%--<input style="border: 1px solid black;" type="button"--%>
+           <%--value="filtrerLesOccurrences" onclick="coloriserLesOccurences();"/>--%>
 </form>
 <div><p>Lorem ipsum dolor sit amet.</p></div>
 <div><p>consectetur adipiscing elit</p></div>

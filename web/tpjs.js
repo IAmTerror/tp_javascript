@@ -23,15 +23,20 @@ function encadreElements()
 function totalOccurElement(baliseName) {
 
     let elements = document.querySelectorAll(baliseName);
+
+    console.log(elements);
     // OU
     // let elements = document.getElementsByTagName("div");
-    console.log(elements);
+
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor="red";
+        elements[i].style.borderColor="1px solid black";
+    }
 
     if(elements != null) {
         return elements.length;
 
     }
-
     return 0;
 }
 
@@ -40,5 +45,7 @@ function nbOccurrences() {
     let element = document.getElementById("idInputText").value;
 
     let nbTotalElements = totalOccurElement(element);
+
     alert(nbTotalElements);
+
 }
